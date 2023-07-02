@@ -1,0 +1,24 @@
+///Pointer
+
+#include<stdio.h>
+int main()
+{
+    int a, b;
+    int *num1, *num2;
+    num1 = &a;
+    num2 = &b;
+    printf("Enter first number = ");
+    scanf("%d", num1);
+    printf("Enter second number = ");
+    scanf("%d", num2);
+    printf("\n\nFirst Number = %d\n",a);
+    printf("Second Number = %d\n\n\n",b);
+
+    if(*num1>*num2)
+        printf("%d is greater than %d.",  *num1, *num2 );
+    else
+        printf("%d is greater than %d.\n",  *num2, *num1 );
+
+    return 0;
+
+}
