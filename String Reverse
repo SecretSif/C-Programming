@@ -1,0 +1,21 @@
+/// Reverse Name
+
+#include<stdio.h>
+#include<string.h>
+
+void reverse(char []);
+void main(){
+  char name[20];
+  printf("Enter your name: ");
+  scanf("%[^\n]s", name);
+  reverse(name);
+}
+void reverse(char name[]){
+	int l=strlen(name);
+	char rev[l];
+	int i,p=0;
+	for(i=l-1;i>=0;i--){
+	rev[p++]=name[i];
+	}
+	printf("Reverse: %s\n\n",rev);
+}
