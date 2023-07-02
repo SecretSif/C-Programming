@@ -1,0 +1,36 @@
+/*
+	This program is a program that can convert temperature from
+	degree celcius to farenheit and farenheit to celcius.
+*/
+
+#include<stdio.h>
+int main()
+{
+    float calcius, farenheit, ctof, ftoc;
+    int choice;
+    printf("1.Celcius to Farenheit");
+    printf("\n2.Farenheit to Calcius");
+    printf("\nPlease enter your choice: ");
+    scanf("%d", &choice);
+
+    if (choice==1)
+    {
+        printf("Enter the temparature in celcius: ");
+        scanf("%f", &calcius);
+        ctof= (calcius*9/5)+32;
+        printf("%.1f calcius is %.1f farenheit.", calcius,ctof);
+    }
+    else if (choice==2)
+    {
+        printf("Enter the temparature in farenheit: ");
+        scanf("%f", &farenheit);
+        ftoc= (farenheit-32)*5/9;
+        printf("%.1f farenheit is %.1f calcius.", farenheit,ftoc);
+    }
+    else
+    {
+        printf("Wrong Input. Choose either 1 or 2 option to get results.");
+    }
+
+    return 0;
+}
