@@ -1,0 +1,18 @@
+
+/* This C program is to understand the function of break & continue statement in loop. */
+
+#include<stdio.h>
+int main()
+{
+    int i;
+    for (i=1;i<=30;i++)
+    {
+        if(i%3==0)         // Numbers that are divisible by 3 will not be printed for the use of continue statement.
+            continue;      // Continue statement are used when you want to skip certain output.
+        printf("%d\n",i);
+
+        if(i==20)
+            break;         // break statement are used in a loop to break the loop before its destination which is 30 in that program.
+    }
+return 0;
+}
