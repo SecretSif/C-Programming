@@ -1,0 +1,32 @@
+
+#include<stdio.h>
+int main()
+{
+    int a[100],i,j,order,num;
+    printf("Enter the total number size: ");
+    scanf("%d",&num);
+
+    for(i=0;i<num;++i)
+    {
+        printf("Enter %d Number: ",i+1);
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<num;++i)
+    {
+        for(j=i+1;j<num;++j)
+        {
+            if(a[i]>a[j])
+            {
+                order=a[i];
+                a[i]=a[j];
+                a[j]=order;
+            }
+        }
+    }
+    printf("Arranged in ascending order of the numbers are: \n");
+    for(i=0;i<num;++i)
+    {
+        printf(" %d ",a[i]);
+    }
+    return 0;
+}
