@@ -1,0 +1,42 @@
+#include<stdio.h>
+int main()
+{
+int a[20], top=-1, maxsize=5, value,i,n;
+for ( ; ;)
+{
+printf("1. Insert\n2. Delete\n3. Display\n0. program exit\nEnter your choice:");
+scanf("%d", &n);
+if (n==1)
+{
+printf("Enter the value: \n");
+scanf("%d",&value);
+if (top==maxsize)
+printf("Stack is overflow!\n");
+else
+{
+top=top+1;
+a[top]=value;
+printf("Successfully inserted.......\n");
+}
+}
+else if (n==2)
+{
+if(top==-1)
+printf("Stack is underflow!\n");
+else
+{
+a[top]= NULL;
+top=top-1;
+printf("Successfully deleted.......\n");
+}
+}
+else if(n==3)
+{
+printf("Final Stack values are:\n");
+for(i=0;i<=top;i++)
+printf("%d\n",a[i]);
+}
+else
+exit(0);
+}
+}
