@@ -1,0 +1,37 @@
+/*
+	This program is a program that can take input of the values of  X & Y Coordinates &
+	deliver output in which quadrant inputted coordinates lies.
+*/
+
+#include<stdio.h>
+int main()
+{
+    float x,y;
+    printf("Please enter the value of X coordinate point: ");
+    scanf("%f", &x);
+
+    printf("Please enter the value of Y coordinate point: ");
+    scanf("%f", &y);
+
+    if (x>0 && y>0)
+    {
+        printf("Inputted coordinate (%.1f,%.1f) lies in 1st Quadrant.",x,y);
+    }
+    else if (x<0 && y>0)
+    {
+       printf("Inputted coordinate (%.1f,%.1f) lies in 2nd Quadrant.",x,y);
+    }
+    else if (x<0 && y<0)
+    {
+        printf("Inputted coordinate (%.1f,%.1f) lies in 3rd Quadrant.",x,y);
+    }
+    else if (x>0 && y<0)
+    {
+        printf("Inputted coordinate (%.1f,%.1f) lies in 4st Quadrant.",x,y);
+    }
+    else
+    {
+      printf("Inputted coordinate (%.1f,%.1f) don't belong to any Quadrant.",x,y);
+    }
+    return 0;
+}
