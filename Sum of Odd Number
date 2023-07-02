@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+    int i,sum=0;
+    printf("The Odd numbers are: ");
+    for(i=1; i<=20; i++)
+    {
+        if(i%2!=0)
+        {
+            printf("%d ",i);
+            sum=sum+i;
+        }
+
+    }
+    printf("\n\nThe sum of Odd numbers are:%d\n\n", sum);
+    return 0;
+}
