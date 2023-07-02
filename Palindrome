@@ -1,0 +1,22 @@
+/// Palindrome (Number)
+
+#include<stdio.h>
+int main(){
+int rem, rev=0, num;
+printf("Enter the number to check: ");
+scanf("%d", &num);
+int original = num;
+while (num!=0)
+{
+    rem = num % 10;
+    rev = rev* 10 + rem;
+    num = num/10;
+}
+if(original == rev)
+    printf("The number (%d) is a Palindrome Number.", original);
+else
+    printf("The number (%d) is not a Palindrome Number.", original);
+
+    return 0;
+}
+
