@@ -1,0 +1,23 @@
+
+/// Fibonacci Series (Recursion)
+
+
+#include<stdio.h>
+long long int fibonacci(n)
+{
+    if(n<=1)
+        return n;
+    else
+        return fibonacci(n-1) + fibonacci (n-2);
+}
+
+int main( )
+{
+    long long int n;
+    printf("Enter the position of Fibonacci series: ");
+    while(scanf("%lld", &n) != -1)
+    {
+        printf("Fibo (%lld) : %lld\n",n, fibonacci(n));
+        printf("Enter the position of Fibonacci series: ");
+    }
+}
