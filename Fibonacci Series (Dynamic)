@@ -1,0 +1,25 @@
+/// Fibonacci Series (Dynamic Programming)
+
+#include<stdio.h>
+long long int fibonacci(n)
+{
+    int f[n+1], i;
+    f[0] = 0;
+    f[1] = 1;
+    for(i=2; i<=n; i++)
+    {
+        f[i] = f[i-1] + f[i-2];
+    }
+    return f[n];
+}
+
+int main( )
+{
+    long long int n;
+    printf("Enter the position of Fibonacci series: ");
+    while(scanf("%lld", &n) != -1)
+    {
+        printf("Fibo (%lld) : %lld\n",n, fibonacci(n));
+        printf("Enter the position of Fibonacci series: ");
+    }
+}
