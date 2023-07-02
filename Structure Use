@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+struct CIS {
+   char  Name[50];
+   char  Section[50];
+   char  Email[100];
+   int   ID_num;
+};
+int main( ) {
+   struct CIS Student1;        /* Declare Student1 of type CIS */
+   struct CIS Student2;        /* Declare Student2 of type CIS */
+/* Student 1 information */
+   strcpy( Student1.Name, "Ariful Rahman");
+   strcpy( Student1.Section, "A");
+   strcpy( Student1.Email, "rahman16-630@diu.edu.bd");
+   Student1.ID_num = 22116630;
+/* Student 2 information */
+   strcpy( Student2.Name, "Fariha Islam Suborna");
+   strcpy( Student2.Section, "B");
+   strcpy( Student2.Email, "suborna16-636@diu.edu.bd");
+   Student2.ID_num = 22116636;
+/* print Student1 info */
+   printf( "Student 1 Name : %s\n", Student1.Name);
+   printf( "Student 1 Section : %s\n", Student1.Section);
+   printf( "Student 1 Email : %s\n", Student1.Email);
+   printf( "Student 1 ID_num : %d\n", Student1.ID_num);
+/* print Student2 info */
+   printf( "\n\nStudent 2 Name : %s\n", Student2.Name);
+   printf( "Student 2 Section : %s\n", Student2.Section);
+   printf( "Student 2 Email : %s\n", Student2.Email);
+   printf( "Student 2 ID_num : %d\n", Student2.ID_num);
+
+   return 0;
+}
+
