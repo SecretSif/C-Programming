@@ -1,0 +1,93 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_VERTICES 26 // Maximum number of vertices (A-Z)
+
+// Structure to represent an edge
+struct Edge {
+    char source;
+    char destination;
+    int weight;
+};
+
+// Comparator function to use in sorting the edges
+int compareEdges(const void* a, const void* b) {
+    return ((struct Edge*)a)->weight - ((struct Edge*)b)->weight;
+}
+
+// Find parent of a vertex using the parent array
+int findParent(int parent[], int vertex) {
+    if (parent[vertex] == -1)
+        return vertex;
+    return findParent(parent, parent[vertex]);
+}
+
+// Union of two sets of vertices using rank (union by rank)
+void unionSets(int parent[], int rank[], int x, int y) {
+    int xRoot = findParent(parent, x);
+    int yRoot = findParent(parent, y);
+
+    if (rank[xRoot] < rank[yRoot])
+        parent[xRoot] = yRoot;
+    else if (rank[xRoot] > rank[yRoot])
+        parent[yRoot] = xRoot;
+    else {
+        parent[yRoot] = xRoot;
+        rank[xRoot]++;
+    }
+}
+
+// Function to find the minimum spanning tree using Kruskal's algorithm
+void kruskalMST(int numVertices, struct Edge edges[], int numEdges) {
+    // Sort the edges in non-decreasing order of their weights
+    qsort(edges, numEdges, sizeof(struct Edge), compareEdges);
+
+    int parent[MAX_VERTICES]; // Array to store parent of each vertex
+    int rank[MAX_VERTICES];   // Array to store rank of each vertex
+
+    memset(parent, -1, sizeof(parent)); // Initialize parent array
+    memset(rank, 0, sizeof(rank));       // Initialize rank array
+
+    printf("\n\nMinimum Spanning Tree:\n");
+
+    int mstWeight = 0; // Total weight of the MST
+
+    for (int i = 0; i < numEdges; i++) {
+        struct Edge currentEdge = edges[i];
+
+        // Find the parents of the source and destination vertices
+        int sourceParent = findParent(parent, currentEdge.source - 'A');
+        int destParent = findParent(parent, currentEdge.destination - 'A');
+
+        // If including the current edge doesn't form a cycle, add it to the MST
+        if (sourceParent != destParent) {
+            printf("%c -- %c \t%d\n", currentEdge.source, currentEdge.destination, currentEdge.weight);
+            mstWeight += currentEdge.weight;
+            unionSets(parent, rank, sourceParent, destParent);
+        }
+    }
+
+    printf("MST Weight: %d\n", mstWeight);
+}
+
+int main() {
+    int numVertices, numEdges;
+
+    printf("Enter the number of vertices: ");
+    scanf("%d", &numVertices);
+
+    printf("Enter the number of edges: ");
+    scanf("%d", &numEdges);
+
+    struct Edge edges[numEdges];
+
+    for (int i = 0; i < numEdges; i++) {
+        printf("Enter the source, destination, and weight of edge %d: ", i + 1);
+        scanf(" %c %c %d", &edges[i].source, &edges[i].destination, &edges[i].weight);
+    }
+
+    kruskalMST(numVertices, edges, numEdges);
+
+    return 0;
+}
