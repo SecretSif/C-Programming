@@ -1,0 +1,41 @@
+/// Split an Array based on the Even/Odd number.
+
+#include<stdio.h>
+int main()
+{
+    int N;
+
+    printf("Enter the number of elements of the array: ");
+    scanf("%d", &N);
+    int i,a[N],even[N],odd[N],e=0,o=0;
+
+    /* e= Total Even numbers;
+      o= Total Odd numbers;
+      a[N]= Array of Total numbers;
+      even[N]= Array of Even numbers;
+      odd[N]= Array of Odd numbers.  */
+
+    printf("Enter %d integer numbers:\n",N);
+    for(i=0; i<N; i++)
+        scanf("%d",&a[i]);
+
+    for(i=0; i<N; i++)
+    {
+        if(a[i]%2==0)
+            even[e++]=a[i];
+        else
+            odd[o++]=a[i];
+    }
+
+    printf("\n\nArray elements of even[%d] are...\n",e);
+    for(i=0; i<e; i++)
+        printf("%d\n",even[i]);
+
+    printf("\n\nArray elements of odd[%d] are...\n",o);
+    for(i=0; i<o; i++)
+        printf("%d\n",odd[i]);
+
+
+    return 0;
+
+}
