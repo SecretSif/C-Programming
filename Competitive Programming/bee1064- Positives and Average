@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+   int i, N=0;
+   float num, sum=0,average;
+   for(i=1;i<=6;i++)
+   {
+       scanf("%f",&num);
+       if(num>=0)
+       {
+        N++;
+        sum+=num;
+       }
+   }
+   average=sum/N;
+   printf("%d valores positivos\n",N);
+   printf("%.1f\n",average);
+
+   return 0;
+}
