@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+int number,hours;
+float per_hour;
+scanf("%d\n", &number);
+scanf("%d\n", &hours);
+scanf("%f", &per_hour);
+printf("NUMBER = %d\n",number);
+printf("SALARY = U$ %.2f\n", hours*per_hour);
+
+    return 0;
+}
