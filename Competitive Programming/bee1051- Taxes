@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+    float salary, tax1, tax2, tax3;
+    scanf("%f",&salary);
+    tax1 = ((salary - 2000.00) * 8)/100;
+    tax2 = ((salary - 3000.00) * 18)/100;
+    tax3 = ((salary - 4500.00) * 28)/100;
+    if(salary >= 0.00 && salary <= 2000.00)
+        printf("Isento\n");
+    else if(salary >= 2000.01 && salary <= 3000.00)
+    {
+        printf("R$ %.2f\n",tax1);
+    }
+    else if(salary >= 3000.01 && salary <= 4500.00)
+    {
+        printf("R$ %.2f\n",tax2+80);
+    }
+    else if(salary > 4500.00)
+        printf("R$ %.2f\n",tax3+80+270);
+    return 0;
+}
