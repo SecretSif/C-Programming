@@ -1,0 +1,18 @@
+#include <stdio.h>
+#define pi 3.14159
+
+int main() {
+double A,B,C,tri,rad,tra,sq,rec;
+scanf("%lf %lf %lf",&A, &B, &C);
+tri=.5*A*C;
+rad=pi*(C*C);
+tra=.5*(A+B)*C;
+sq=(B*B);
+rec=(A*B);
+printf("TRIANGULO: %.3lf\n",tri);
+printf("CIRCULO: %.3lf\n",rad);
+printf("TRAPEZIO: %.3lf\n",tra);
+printf("QUADRADO: %.3lf\n",sq);
+printf("RETANGULO: %.3lf\n",rec);
+    return 0;
+}
