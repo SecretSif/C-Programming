@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main()
+{
+    int first,second,third,temp,i,j,k;
+    scanf("%d %d %d",&first,&second,&third);
+    i = first;
+    j = second;
+    k = third;
+    if(first>second)
+    {
+        temp = first;
+        first = second;
+        second = temp;
+    }
+    if(first>third)
+    {
+        temp = first;
+        first = third;
+        third = temp;
+    }
+    if(second>third)
+    {
+        temp = second;
+        second = third;
+        third = temp;
+    }
+    printf("%d\n%d\n%d\n\n",first,second,third);
+    printf("%d\n%d\n%d\n",i,j,k);
+    return 0;
+
+}
