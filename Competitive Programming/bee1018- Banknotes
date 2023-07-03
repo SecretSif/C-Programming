@@ -1,0 +1,16 @@
+#include <stdio.h>
+ 
+int main() {
+    int amount,i;
+    int N[7]={100,50,20,10,5,2,1};
+    int S[7];
+    scanf("%d",&amount);
+    printf("%d\n",amount);
+    for(i=0;i<7;i++){
+        S[i]=amount/N[i];
+        amount=amount % N[i];
+        printf("%d nota(s) de R$ %d,00\n",S[i],N[i]);
+    }
+
+    return 0;
+}
